@@ -1,29 +1,24 @@
-TODO: jquery
-wonder about quality of the open source solutions 
-https://github.com/einaregilsson/cards.js
+# Challenge
+I liked this take-home programming test very match. Thanks for the opportunity. The most complicated part was to find an open source solution of the playing cards (dealer) with any documentation, clear API and as npm module.
 
-<div style="background: #308b5a; padding: 10px; color: #fef72d">
 
-# Test Project
+So, I rely on http://einaregilsson.github.io/cards.js/ because it was closer to the requirements.
+Was upset about it's jquery dependency...
 
-<p>
-Create a mini game where clicking the button generate several hand cards. Please be sure to fork this repo, update this readme with any notes on your code.
-</p>
+## jQuery - is evil in modern development
+I know that using jQuery that directly modify DOM in combination with React is a bad practise.
+But in the situation with limited time and testing purpose I hope it's acceptable.
 
-- a hand has seven cards
-- the winner of the game will be by the amount of pairs a hand has
-- each "deal" will create a brand new "game" with new hands
-- display those hands
-- mark each hand "pairs" with proper border. Be sure to that diff pairs has diff borders
-- game has two hands by default
-- organized code
 
-### Extra
+## Possible improvements
+- Styling can be better. I was not focused on it.
+- Good to have cards-js as a separate npm module. Instead of splitting it to the public and src parts.
+- Ignored adaptive design.
+- Rewrite to the typescript (as 3d party solution was on js I decided not to move to the ts).
 
-- option to add or remove hands 2-4
-- tests
+### Timelines
+- 1.5 hours for the researching playing cards solution;
+- 2.5 hours coding and adapting 3d party solution to my needs;
+- 1 hour for adding some tests examples and README.
 
-### Helpers
-
-#### example card
-<img src="http://h3h.net/images/cards/diamond_9.svg" />
+Total: 5 hours.

@@ -3,9 +3,9 @@ import "./App.css";
 
 import { onDealClick } from "./helpers/on-deal-click";
 
-const DEFAULT_PLAYERS_AMOUNT = 2;
-const MIN_PLAYERS_AMOUNT = 2;
-const MAX_PLAYERS_AMOUNT = 4;
+export const DEFAULT_PLAYERS_AMOUNT = 2;
+export const MIN_PLAYERS_AMOUNT = 2;
+export const MAX_PLAYERS_AMOUNT = 4;
 
 function App() {
   const [playersAmount, setPlayersAmount] = useState(DEFAULT_PLAYERS_AMOUNT);
