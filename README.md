@@ -1,3 +1,6 @@
+TODO: jquery
+wonder about quality of the open source solutions 
+https://github.com/einaregilsson/cards.js
 
 <div style="background: #308b5a; padding: 10px; color: #fef72d">
 
