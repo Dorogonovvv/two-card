@@ -1,8 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import App, { DEFAULT_PLAYERS_AMOUNT, MAX_PLAYERS_AMOUNT } from "./App";
-import * as onDealClickModule from "./helpers/on-deal-click";
-import { onDealClick } from "./helpers/on-deal-click";
+import { CardHands } from "./CardHands";
 
 describe("App component", () => {
   it("should render Deals button correctly", () => {
@@ -20,13 +19,21 @@ describe("App component", () => {
     wrapper.find("input").prop("onChange")({ target: { value: 89 } });
     expect(wrapper.find("input").prop("value")).toBe(MAX_PLAYERS_AMOUNT);
   });
-  it("check deal button click handler", () => {
-    jest.spyOn(onDealClickModule, "onDealClick");
+  it("render number of round", () => {
     const wrapper = shallow(<App />);
-    wrapper.find("input").prop("onChange")({ target: { value: 89 } });
-    wrapper.find("button").prop("onClick")();
-    expect(onDealClickModule.onDealClick).toHaveBeenCalledWith(
-      MAX_PLAYERS_AMOUNT
+    expect(wrapper.find("h1").at(0).prop("children")).toEqual([
+      "Played ",
+      0,
+      " time",
+      "",
+    ]);
+  });
+  it("should render CardHands with correct props", () => {
+    const wrapper = shallow(<App />);
+    const CardHandsComponent = wrapper.find(CardHands);
+    expect(CardHandsComponent).toHaveLength(1);
+    expect(CardHandsComponent.props()).toEqual(
+      expect.objectContaining({ round: 0, playersAmount: 2 })
     );
   });
 });

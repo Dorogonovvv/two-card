@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-
-import { onDealClick } from "./helpers/on-deal-click";
+import { CardHands } from "./CardHands";
 
 export const DEFAULT_PLAYERS_AMOUNT = 2;
 export const MIN_PLAYERS_AMOUNT = 2;
@@ -9,6 +8,7 @@ export const MAX_PLAYERS_AMOUNT = 4;
 
 function App() {
   const [playersAmount, setPlayersAmount] = useState(DEFAULT_PLAYERS_AMOUNT);
+  const [round, setRound] = useState(0);
 
   const handlePlayersAmountChange = (event) => {
     const value = Number(event.target.value);
@@ -26,10 +26,13 @@ function App() {
       <button
         id="deal"
         className="play-button"
-        onClick={() => onDealClick(playersAmount)}
+        onClick={() => setRound(round + 1)}
       >
         NEW DEAL
       </button>
+      <h1>
+        Played {round} time{round > 1 ? "s" : ""}
+      </h1>
       <label htmlFor="players-amount-input">Players amount:</label>
       <input
         id="players-amount-input"
@@ -41,7 +44,8 @@ function App() {
         value={playersAmount}
         onChange={handlePlayersAmountChange}
       />
-      <div id="card-table" />
+
+      <CardHands round={round} playersAmount={playersAmount} />
 
       <hr />
 

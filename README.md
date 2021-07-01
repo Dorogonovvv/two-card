@@ -1,4 +1,19 @@
-# Challenge
+# v.2 New implementation of the game without 3d party lib and jQuery
+This time I've used only [CSS library](https://selfthinker.github.io/CSS-Playing-Cards/#hand) to draw the playing cards.
+
+My goal was to fix previous issues and finish remarks ASAP.
+
+Still some parts of code can be better separated.
+
+As for now there is no 3d party dependency - I've added new code with TypeScript.
+
+Used `round` prop as trigger for the computations and rendering cards;
+
+Prepared `CARDS` via quick replace functions in the IDEA (not manually);
+
+Has not implemented part about `Business logic didn't account for 3 of a kind, 4 of a kind` as it's not mentioned in the initial tech spec (`The winner of the game will be by the amount of pairs a hand has`).
+
+# v.1 Challenge
 I liked this take-home programming test very match. Thanks for the opportunity. The most complicated part was to find an open source solution of the playing cards (dealer) with any documentation, clear API and as npm module.
 
 

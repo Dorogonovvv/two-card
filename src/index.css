@@ -31,3 +31,7 @@ h1 {
     left: 4px;
     box-shadow: none;
 }
+
+.table {
+    overflow: auto;
+}
